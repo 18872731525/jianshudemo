@@ -23,3 +23,49 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+#通用混淆配置
+-dontwarn android.support.**
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+-keep public class * implements java.io.Serializable {*;}
+
+-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,LocalVariable*Table,*Annotation*,Synthetic,EnclosingMethod
+
+-keepclassmembers class * implements android.os.Parcelable {
+    *;
+}
+#框架的混淆代码
+# Gilde
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.AppGlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+# for DexGuard only
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+
+
+# gson
+-keep class com.google.gson.** {*;}
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+# json
+-keep class com.alibaba.fastjson.** { *; }
+
+#recycleview BaseAdapter
+-keep class com.chad.library.adapter.** {
+*;
+}
+-keep public class * extends com.chad.library.adapter.base.BaseQuickAdapter
+-keep public class * extends com.chad.library.adapter.base.BaseViewHolder
+-keepclassmembers public class * extends com.chad.library.adapter.base.BaseViewHolder {
+     <init>(android.view.View);
+}
+

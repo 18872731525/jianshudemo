@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+
+    }
+
+    sourceSets {
+        main {
+            //jni库的调用会到资源文件夹下libs里面找so文件
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //日志输出工具
+    compile 'com.orhanobut:logger:1.15'
+    //图片加载框架Gilde
+    compile 'com.github.bumptech.glide:glide:4.1.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+    //V7兼容包 你懂的
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    //GSON解析
+    compile 'com.google.code.gson:gson:2.7'
+    //FASTJSON
+    compile 'com.alibaba:fastjson:1.1.63.android'
+    //recyclerview相关
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.28'
+}
