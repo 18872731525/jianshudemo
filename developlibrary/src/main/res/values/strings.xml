@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DevelopLibrary</string>
+    <string name="test">文本</string>
 </resources>
