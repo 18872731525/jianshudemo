@@ -64,7 +64,7 @@ public class StateBar implements BaseStateBar {
     @Override
     public void setBackgroundColor(int color) {
         if (isEnabled) {
-            stateBar.setBackgroundColor(color);
+            stateBar.setBackgroundColor(UiUtil.getColor(color));
         }
     }
 

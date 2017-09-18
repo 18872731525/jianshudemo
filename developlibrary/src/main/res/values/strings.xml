@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DevelopLibrary</string>
     <string name="test">文本</string>
+    <string name="network_error">网络连接已断开</string>
+    <string name="unknow_error">未知错误</string>
+    <string name="network_error_btn">刷新看看</string>
+    <string name="no_data">暂无数据</string>
 </resources>

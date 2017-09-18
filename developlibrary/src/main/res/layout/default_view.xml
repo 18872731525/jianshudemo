@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/iv_default_lcon"
-        android:src="@mipmap/ic_launcher"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:src="@mipmap/no_network_icon" />
 
     <TextView
         android:id="@+id/tv_hint"
@@ -21,7 +21,7 @@
         android:gravity="center"
         android:paddingLeft="@dimen/dp25"
         android:paddingRight="@dimen/dp25"
-        android:text="@string/test"
+        android:text="@string/network_error"
         android:textColor="@color/gray_898989"
         android:textSize="@dimen/sp14" />
 
@@ -32,7 +32,7 @@
         android:layout_marginTop="@dimen/dp15"
         android:background="@drawable/radius_default_btn"
         android:gravity="center"
-        android:text="@string/test"
+        android:text="@string/network_error_btn"
         android:textColor="@color/black_414141"
         android:textSize="@dimen/sp14" />
 

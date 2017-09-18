@@ -151,4 +151,5 @@
     <color name="gray_backgroud">@color/gray_f0f0f0</color> <!-- 浅灰 -->
     <color name="gray_898989">#898989</color> <!-- 浅灰 -->
     <color name="black_414141">#414141</color> <!-- 灰黑 -->
+    <color name="balck_af000000">#AF000000</color>
 </resources>

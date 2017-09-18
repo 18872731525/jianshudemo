@@ -2,6 +2,8 @@ package com.example.developlibrary.view.defaultview;
 
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -54,17 +56,57 @@ public class DefaultView {
         });
     }
 
+    public boolean isShow() {
+        return defaultPageView.getVisibility() == View.VISIBLE;
+    }
+
+    public View getRootView() {
+        return defaultPageView;
+    }
+
+    public DefaultViewBuild getBuild() {
+        return build;
+    }
+
     public void show() {
         if (defaultPageView.getVisibility() != View.VISIBLE) {
+            setNetWorkData();
             defaultPageView.setVisibility(View.VISIBLE);
         }
     }
 
-//    private void reset() {
-//        build.setIcon(R.mipmap.defaultpage_nonetwork_icon)
-//                .setHintText(R.string.seem_not_network)
-//                .setBtnText(R.string.again_load);
-//    }
+    private void setNetWorkData() {
+        build.setIcon(R.mipmap.no_network_icon)
+                .setHintText(R.string.network_error)
+                .setBtnText(R.string.network_error_btn);
+    }
+
+    public void setResultData(String text) {
+        if (!TextUtils.isEmpty(text)) {
+            build.setIcon(R.mipmap.no_network_icon)
+                    .setHintText(text)
+                    .setBtnVisible(View.INVISIBLE).show();
+
+        } else {
+            build.setIcon(R.mipmap.no_network_icon)
+                    .setHintText(R.string.unknow_error)
+                    .setBtnVisible(View.INVISIBLE).show();
+        }
+    }
+
+
+    public void setErrorData(String error) {
+        if (!TextUtils.isEmpty(error)) {
+            build.setIcon(R.mipmap.no_network_icon)
+                    .setHintText(error)
+                    .setBtnText(R.string.network_error_btn).show();
+        } else {
+            build.setIcon(R.mipmap.no_network_icon)
+                    .setHintText(R.string.unknow_error)
+                    .setBtnText(R.string.network_error_btn).show();
+        }
+
+    }
 
     public void hide() {
         if (defaultPageView.getVisibility() != View.GONE) {

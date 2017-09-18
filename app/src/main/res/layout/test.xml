@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp30"
-        android:text="测试加载动画" />
+        android:text="1" />
 
 
     <TextView
@@ -19,19 +19,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp30"
-        android:text="测试无网络" />
+        android:text="2" />
 
     <TextView
         android:id="@+id/tv_test3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp30"
-        android:text="测试空数据" />
+        android:text="3" />
 
     <TextView
         android:id="@+id/tv_test4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp30"
-        android:text="测试错误" />
+        android:text="4" />
 </LinearLayout>

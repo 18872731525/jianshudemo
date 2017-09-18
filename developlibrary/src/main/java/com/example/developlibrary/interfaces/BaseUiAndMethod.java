@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.support.annotation.Nullable;
 
 import com.example.developlibrary.view.defaultview.DefaultView;
-import com.example.developlibrary.view.statebar.StateBar;
+import com.example.developlibrary.view.statebar.BaseStateBar;
 import com.example.developlibrary.view.titlebar.BaseTitleBar;
 
 /**
@@ -24,10 +24,18 @@ public interface BaseUiAndMethod {
     //显示隐藏加载中
     void showLoadingView();
 
+    void showLoadingView(int Type);
+
     void hideLoadingView();
 
     //显示、隐藏缺省页
+    DefaultView.DefaultViewBuild getDefaultViewBuild();
+
     void showDefaultView();
+
+    void showErrorDefaultView(String text);
+
+    void showNoDataDefaultView(String text);
 
     void hideDefaultView();
 
@@ -37,9 +45,8 @@ public interface BaseUiAndMethod {
     BaseTitleBar getTitleBar();
 
     //状态栏
-    StateBar getStateBar();
+    BaseStateBar getStateBar();
 
-    DefaultView.DefaultViewBuild getDefaultViewBuild();
 
     //提示相关方法
     void showHintAndFinish(String hint);

@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.developlibrary.R;
+import com.example.developlibrary.utils.UiUtil;
 
 /**
  * 作者：wl on 2017/9/15 13:31
@@ -55,101 +56,128 @@ public class TitleBar extends FrameLayout implements BaseTitleBar {
 
     @Override
     public View getView() {
-        return null;
+        return this;
     }
 
     @Override
     public BaseTitleBar setBgColor(int color) {
-        return null;
+        rly_root.setBackgroundColor(UiUtil.getColor(color));
+        return this;
     }
 
     @Override
     public BaseTitleBar setTitle(@StringRes int StringResId) {
-        return null;
+        tvTitle.setText(StringResId);
+        return this;
     }
 
     @Override
     public BaseTitleBar setTitle(String text) {
-        return null;
+        tvTitle.setText(text);
+        return this;
     }
 
     @Override
     public BaseTitleBar setTitleIcon(@DrawableRes int drawableId) {
-        return null;
+        tvTitle.setCompoundDrawables(null, null, UiUtil.getDrawable(drawableId), null);
+        return this;
     }
 
     @Override
     public BaseTitleBar setTitleTextColor(int color) {
-        return null;
+        tvTitle.setTextColor(color);
+        return this;
     }
 
     @Override
     public BaseTitleBar setRightText(String text) {
-        return null;
+        tvRight.setText(text);
+        return this;
     }
 
     @Override
     public BaseTitleBar setRightText(@StringRes int stringResId) {
-        return null;
+        tvRight.setText(stringResId);
+        return this;
     }
 
     @Override
     public BaseTitleBar setRightIcon(@DrawableRes int drawableId) {
-        return null;
+        tvRight.setCompoundDrawables(null, null, UiUtil.getDrawable(drawableId), null);
+        return this;
     }
 
     @Override
     public BaseTitleBar showRightTextView() {
-        return null;
+        if (tvRight.getVisibility() != VISIBLE) {
+            tvRight.setVisibility(VISIBLE);
+        }
+        return this;
     }
 
     @Override
     public BaseTitleBar hideRightTextView() {
-        return null;
+        if (tvRight.getVisibility() != GONE) {
+            tvRight.setVisibility(GONE);
+        }
+        return this;
     }
 
     @Override
     public BaseTitleBar setRightTextColor(int color) {
-        return null;
+        tvRight.setTextColor(color);
+        return this;
     }
 
     @Override
     public BaseTitleBar setRightTextClickListener(OnClickListener listener) {
-        return null;
+        tvRight.setOnClickListener(listener);
+        return this;
     }
 
     @Override
     public BaseTitleBar setLeftText(String text) {
-        return null;
+        tvLeft.setText(text);
+        return this;
     }
 
     @Override
     public BaseTitleBar setLeftText(@StringRes int stringResId) {
-        return null;
+        tvLeft.setText(stringResId);
+        return this;
     }
 
     @Override
     public BaseTitleBar setLeftIcon(@DrawableRes int drawableId) {
-        return null;
+        tvLeft.setCompoundDrawables(UiUtil.getDrawable(drawableId), null, null, null);
+        return this;
     }
 
     @Override
     public BaseTitleBar showLeftTextView() {
-        return null;
+        if (tvLeft.getVisibility() != VISIBLE) {
+            tvLeft.setVisibility(VISIBLE);
+        }
+        return this;
     }
 
     @Override
     public BaseTitleBar hideLeftTextVeiw() {
-        return null;
+        if (tvLeft.getVisibility() != GONE) {
+            tvLeft.setVisibility(GONE);
+        }
+        return this;
     }
 
     @Override
     public BaseTitleBar setLeftTextColor(int color) {
-        return null;
+        tvLeft.setTextColor(color);
+        return this;
     }
 
     @Override
     public BaseTitleBar setLeftTextClickListener(OnClickListener listener) {
-        return null;
+        tvLeft.setOnClickListener(listener);
+        return this;
     }
 }

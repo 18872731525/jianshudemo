@@ -2,4 +2,5 @@
 <resources>
     <item name="id_title_bar" type="id" />
     <item name="id_state_bar" type="id" />
+    <item name="id_fragment" type="id" />
 </resources>
