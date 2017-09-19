@@ -1,9 +1,11 @@
-package com.example.dell.jianshudemo;
+package com.example.dell.jianshudemo.mvp.function;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.dell.jianshudemo.R;
+import com.example.dell.jianshudemo.TestActivity;
 import com.example.developlibrary.component.BaseActivity;
 import com.example.developlibrary.utils.UiUtil;
 import com.example.developlibrary.view.loading.LoadingView;
