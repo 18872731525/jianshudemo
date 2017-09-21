@@ -29,7 +29,7 @@ public class BaseFileUtil {
     public static final String DOWNLOAD_DIR = "download";
     public static final String CACHE_DIR = "cache";
     public static final String IMAGE_DIR = "image";
-
+    public static final String HTTP_CACHE_DIR = "http_cache";
 
     /**
      * 判断SD卡是否挂载
@@ -66,7 +66,6 @@ public class BaseFileUtil {
     public static String getDownloadDir() {
         return getDir(DOWNLOAD_DIR);
     }
-
     /**
      * 获取缓存目录
      */
@@ -79,6 +78,12 @@ public class BaseFileUtil {
      */
     public static String getImageDir() {
         return getDir(IMAGE_DIR);
+    }
+    /**
+     * 获取网络请求缓存
+     */
+    public static String getHttpCacheDir() {
+        return getDir(HTTP_CACHE_DIR);
     }
 
 
