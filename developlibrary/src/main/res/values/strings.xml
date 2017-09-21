@@ -5,4 +5,9 @@
     <string name="unknow_error">未知错误</string>
     <string name="network_error_btn">刷新看看</string>
     <string name="no_data">暂无数据</string>
+    <string name="base_permisson_request">相机、存储权限为app运行必备的权限，请设置允许</string>
+    <string name="permisson_tip2">无法获取app运行必备的权限，请先去设置</string>
+    <string name="qiut">退出</string>
+    <string name="go_setting">去设置</string>
+    <string name="getpermisson_faild">权限获取失败</string>
 </resources>

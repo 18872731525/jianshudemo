@@ -21,7 +21,7 @@ import java.io.IOException;
  * 作者：wl on 2017/9/13 16:09
  * 邮箱：wangl@ixinyongjia.com
  */
-public class BaseBitmapUtill {
+public class BaseBitmapUtil {
     /**
      * 创建一个图片
      *

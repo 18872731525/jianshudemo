@@ -28,7 +28,7 @@ import com.example.developlibrary.view.titlebar.TitleBar;
  * 作者：wl on 2017/9/18 09:39
  * 邮箱：wangl@ixinyongjia.com
  */
-public class BaseActivity extends BaseStackActivity implements BaseUiAndMethod, OnClickDefaultBtn {
+public class BaseActivity extends BasePermissionsAndStackActivity implements BaseUiAndMethod, OnClickDefaultBtn {
 
     //根容器布局
     private RelativeLayout mContainer;
@@ -72,6 +72,7 @@ public class BaseActivity extends BaseStackActivity implements BaseUiAndMethod, 
         return lp;
     }
 
+
     /*********************LoadingView相关方法***********************/
 
     private void initLoadingView() {
@@ -109,6 +110,10 @@ public class BaseActivity extends BaseStackActivity implements BaseUiAndMethod, 
             }
             mContainer.addView(titleBar.getView(), lp);
         }
+    }
+
+    public void setIsLoadTitleBar(boolean isLoad) {
+        isLoadTitleBar = isLoad;
     }
 
     /*********************StateBar相关方法***********************/
@@ -195,7 +200,6 @@ public class BaseActivity extends BaseStackActivity implements BaseUiAndMethod, 
             loadingView.getRootView().setVisibility(View.GONE);
         }
     }
-
 
 
     @Override
