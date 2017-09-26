@@ -157,7 +157,7 @@ public class BasePackageUtil {
         try {
             ApplicationInfo info = UiUtil.getContext().getApplicationInfo();
             boolean isDebug = (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
-            Logger.i("isDebug = " + isDebug);
+//          Logger.i("isDebug = " + isDebug);
             return isDebug;
         } catch (Exception e) {
             Logger.e(e, "获取debug模式异常");

@@ -29,7 +29,7 @@ public class HttpUtil {
     //OkHttpClient
     private OkHttpClient mOkHttpClient;
     //API接口
-    private Api httpApi;
+    private RetrofitApi httpApi;
 
     private HttpUtil() {
         initOKHttp();
@@ -85,7 +85,7 @@ public class HttpUtil {
         //这里主域名的设置单独来弄，万一后台奇葩，一个app里两个主域名的话可以再建一个API_X的接口类，这里类似的单独再配置他的baseurl
         httpApi = builder.baseUrl(Constants.APP_HOST)
                 .build()
-                .create(Api.class);
+                .create(RetrofitApi.class);
 
         //配置了RxJava2CallAdapterFactory即集合RXjava的话httpApi调用xxx方法可以直接返回Observable，然后拿来subscribe
         //不结合RXjava的话返回httpApi调用xxx方法返回Call对象，然后拿来enqueue发请求
@@ -99,7 +99,7 @@ public class HttpUtil {
         return mOkHttpClient;
     }
 
-    public Api getHttpApi() {
+    public RetrofitApi getHttpApi() {
         return httpApi;
     }
 
@@ -109,4 +109,5 @@ public class HttpUtil {
         Cache cache = new Cache(file, HTTP_RESPONSE_DISK_CACHE_MAX_SIZE);
         return cache;
     }
+
 }
