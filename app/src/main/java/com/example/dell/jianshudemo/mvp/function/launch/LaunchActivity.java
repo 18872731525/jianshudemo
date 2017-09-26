@@ -72,9 +72,8 @@ public class LaunchActivity extends BaseActivity {
 
     private void startLottieLogoAnimation() {
         animationView = (LottieAnimationView) findViewById(R.id.animationView);
-        animationView.setProgress(0f);
         animationView.setAnimation("app_start.json", LottieAnimationView.CacheStrategy.Strong);
-      //  animationView.setImageAssetsFolder("lottie");
+        //  animationView.setImageAssetsFolder("lottie");
         animationView.loop(false);
         ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f).setDuration(AnimationUtil.getAnimationDuraing());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

@@ -14,7 +14,7 @@ import com.example.developlibrary.view.titlebar.BaseTitleBar;
 
 
 //接口说明：定义界面（activity或者fragment）中常用的方法以及页面公共的View 比如头部导航栏TitleBarView，状态栏StateBarView，缺省页showDefaultView
-public interface BaseUiAndMethod {
+public interface BaseUiAndMethod extends DisposableManager{
     //无网络弹提示
     boolean isNetworkerConnectHint();
 

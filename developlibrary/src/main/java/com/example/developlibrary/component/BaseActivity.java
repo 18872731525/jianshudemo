@@ -1,6 +1,7 @@
 package com.example.developlibrary.component;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.LayoutRes;
@@ -24,6 +25,9 @@ import com.example.developlibrary.view.statebar.StateBar;
 import com.example.developlibrary.view.titlebar.BaseTitleBar;
 import com.example.developlibrary.view.titlebar.TitleBar;
 
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+
 /**
  * 作者：wl on 2017/9/18 09:39
  * 邮箱：wangl@ixinyongjia.com
@@ -42,6 +46,8 @@ public class BaseActivity extends BasePermissionsAndStackActivity implements Bas
     private DefaultView defaultView;
     /*加载框子*/
     private LoadingView loadingView;
+    /*RxJava的事件解绑管理类？*/
+    protected CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
@@ -272,5 +278,33 @@ public class BaseActivity extends BasePermissionsAndStackActivity implements Bas
     @Override
     public void showHint(String hintText, int color) {
 
+    }
+
+    public void startSelf(Class<?> activity) {
+        Intent intent = new Intent(getApplicationContext(), activity);
+        startActivity(intent);
+    }
+
+
+    /*****************RxJava相关***************************************/
+    @Override
+    public void addDisposable(Disposable observer) {
+        compositeDisposable.add(observer);
+    }
+
+    @Override
+    public void removeDisposable(Disposable observer) {
+        compositeDisposable.remove(observer);
+    }
+
+    @Override
+    public void dispose() {
+        compositeDisposable.dispose();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dispose();
     }
 }

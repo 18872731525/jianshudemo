@@ -17,6 +17,9 @@ import com.example.developlibrary.view.defaultview.DefaultView;
 import com.example.developlibrary.view.statebar.BaseStateBar;
 import com.example.developlibrary.view.titlebar.BaseTitleBar;
 
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+
 /**
  * 作者：wl on 2017/9/18 16:19
  * 邮箱：wangl@ixinyongjia.com
@@ -24,6 +27,7 @@ import com.example.developlibrary.view.titlebar.BaseTitleBar;
 public abstract class BaseFragment extends Fragment implements BaseUiAndMethod, OnClickDefaultBtn {
     protected FrameLayout rootView;
     protected View mContentView;
+    protected CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     @Nullable
     @Override
@@ -215,9 +219,29 @@ public abstract class BaseFragment extends Fragment implements BaseUiAndMethod, 
         super.onCreate(savedInstanceState);
     }
 
+
+    /*****************RxJava相关***************************************/
+
+    @Override
+    public void addDisposable(Disposable observer) {
+        compositeDisposable.add(observer);
+    }
+
+    @Override
+    public void removeDisposable(Disposable observer) {
+        compositeDisposable.remove(observer);
+    }
+
+    @Override
+    public void dispose() {
+        compositeDisposable.dispose();
+    }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
+        dispose();
         hideLoadingView();
+//        Logger.d("onDestroy------%s", getClass().getName());
     }
 }

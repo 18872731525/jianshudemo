@@ -11,4 +11,6 @@ public class Constants {
     /*************************业务接口*****************************************/
       /*首页*/
     public final static String FUNCTION_INDEX = "/api/index/index";
+    /*登陆*/
+    public final static String FUNCTION_LOGIN =  "/api/user.login/checklogin.html";
 }
