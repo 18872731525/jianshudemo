@@ -35,11 +35,14 @@ public class LibLoader {
     public static void init(Application context) {
         mContext = context;
         init();
+
     }
 
     private static void init() {
         mMainThreadId = android.os.Process.myTid();
         mMainThreadHandler = new Handler();
+//        initX5();
+//        preinitX5WebCore();
     }
 
     public static Application getApplication() {
@@ -143,4 +146,5 @@ public class LibLoader {
         }
         activityStack.clear();
     }
+
 }

@@ -35,12 +35,12 @@ public class LaunchActivity extends BaseActivity {
 
     @AfterPermissionGranted(BASE_PERMISSION_REQUEST)
     private void requiresMainPermission() {
-        if (EasyPermissions.hasPermissions(this, permissions[0], permissions[1])) {
+        if (EasyPermissions.hasPermissions(this, permissions[0], permissions[1], permissions[2])) {
             //CacheUtils.getInstance();//获取权限之后再去初始化初存储器!
             //UiUtil.postDelayed(myRunnable, stopTime);
             startLottieLogoAnimation();
         } else {
-            EasyPermissions.requestPermissions(this, getString(R.string.base_permisson_request), BASE_PERMISSION_REQUEST, permissions[0], permissions[1]);
+            EasyPermissions.requestPermissions(this, getString(R.string.base_permisson_request), BASE_PERMISSION_REQUEST, permissions[0], permissions[1], permissions[2]);
         }
 
     }

@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.example.dell.jianshudemo.R;
 import com.example.dell.jianshudemo.TestActivity;
+import com.example.dell.jianshudemo.mvp.extend.showofficefile.FileDisplayActivity;
 import com.example.dell.jianshudemo.mvp.function.javabean.IndexMultBean;
 import com.example.dell.jianshudemo.mvp.function.javabean.Mail;
 import com.example.dell.jianshudemo.mvp.function.javabean.UserInfo;
@@ -48,20 +49,17 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.tv_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showLoadingView();
-                UiUtil.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        hideLoadingView();
-                    }
-                }, 3000);
+
+                String url = "/storage/emulated/0/test.pdf";
+                FileDisplayActivity.show(MainActivity.this,url);
             }
         });
 
         findViewById(R.id.tv_test2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDefaultView();
+                String url = "https://pre.ixinyongjia.com:447/static/customerFile/audit/201709/S0301505886880%E6%88%B4%E6%9C%9D%E6%98%8E%E5%80%9F%E6%AC%BE%E5%8D%8F%E8%AE%AEZ1@@@20170920164138597.pdf";
+                FileDisplayActivity.show(MainActivity.this, url);
             }
         });
 
@@ -325,7 +323,7 @@ public class MainActivity extends BaseActivity {
                         }
 
                     }
-                }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).sample(5,TimeUnit.MICROSECONDS).subscribe(new Observer<Integer>() {
+                }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).sample(5, TimeUnit.MICROSECONDS).subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 

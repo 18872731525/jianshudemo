@@ -1,7 +1,6 @@
 package com.example.developlibrary.component;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.LayoutRes;
@@ -278,11 +277,6 @@ public class BaseActivity extends BasePermissionsAndStackActivity implements Bas
     @Override
     public void showHint(String hintText, int color) {
 
-    }
-
-    public void startSelf(Class<?> activity) {
-        Intent intent = new Intent(getApplicationContext(), activity);
-        startActivity(intent);
     }
 
 
