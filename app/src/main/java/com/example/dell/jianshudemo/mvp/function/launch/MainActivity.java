@@ -51,7 +51,7 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
 
                 String url = "/storage/emulated/0/test.pdf";
-                FileDisplayActivity.show(MainActivity.this,url);
+                FileDisplayActivity.show(MainActivity.this, url);
             }
         });
 
@@ -347,6 +347,93 @@ public class MainActivity extends BaseActivity {
                 });
             }
         });
+
+        findViewById(R.id.tv_test12).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Observable.create(new ObservableOnSubscribe<String>() {
+                    @Override
+                    public void subscribe(ObservableEmitter<String> e) throws Exception {
+                        e.onNext("点击");
+                    }
+                }).throttleFirst(1, TimeUnit.SECONDS,AndroidSchedulers.mainThread()).subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+                        Logger.d("点击");
+                    }
+                });
+            }
+        });
+
+        findViewById(R.id.tv_test11).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Mail mali1 = new Mail();
+                mali1.setTitle("送你离开");
+
+                Mail mali12 = new Mail();
+                mali12.setTitle("千里之外");
+
+                Mail mali13 = new Mail();
+                mali13.setTitle("牡丹江");
+
+                final List<Mail> datas = new ArrayList<Mail>();
+                datas.add(mali1);
+                datas.add(mali12);
+                datas.add(mali13);
+
+
+                Observable.intervalRange(0, datas.size(), 1, 5, TimeUnit.SECONDS).map(new Function<Long, Mail>() {
+                    @Override
+                    public Mail apply(Long aLong) throws Exception {
+                        int i = aLong.intValue();
+                        return datas.get(i);
+                    }
+                }).throttleFirst(1, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Mail>() {
+                    @Override
+                    public void accept(Mail mail) throws Exception {
+                        Toast.makeText(getApplicationContext(), mail.getTitle(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+//                Observable.fromIterable(datas).filter(new Predicate<Mail>() {
+//                    @Override
+//                    public boolean test(Mail mail) throws Exception {
+//                        if (mail.getTitle().contains("外")) {
+//                            return false;
+//                        } else {
+//                            return true;
+//                        }
+//                    }
+//                }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+//                        .timer(1000, TimeUnit.SECONDS, Schedulers.newThread()).subscribe(new Observer<Long>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(Long value) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                });
+
+            }
+        });
+
     }
 
     @Override

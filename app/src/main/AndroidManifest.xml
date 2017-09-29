@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".mvp.function.launch.MainActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity android:name=".mvp.function.launch.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,8 +38,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".TestActivity" />
-        <activity android:name=".mvp.extend.showofficefile.X5WebViewActivity"></activity>
-        <activity android:name=".mvp.extend.showofficefile.FileDisplayActivity"></activity>
+        <activity android:name=".mvp.extend.showofficefile.X5WebViewActivity" />
+        <activity android:name=".mvp.extend.showofficefile.FileDisplayActivity" />
+        <activity android:name=".mvp.function.launch.MyFirstKotlinActivity"></activity>
     </application>
 
 </manifest>
