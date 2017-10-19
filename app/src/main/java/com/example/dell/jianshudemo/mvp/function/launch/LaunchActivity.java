@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.dell.jianshudemo.R;
-import com.example.developlibrary.component.BaseActivity;
+import com.example.dell.jianshudemo.mvp.base.BaseActivity;
 import com.example.developlibrary.utils.AnimationUtil;
 import com.example.developlibrary.utils.BaseConstant;
 import com.example.developlibrary.utils.PreferUtil;

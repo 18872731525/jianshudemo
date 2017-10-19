@@ -4,17 +4,20 @@ import com.example.dell.jianshudemo.mvp.base.BasePresenter;
 import com.example.dell.jianshudemo.mvp.base.BaseView;
 
 /**
- *  description:
- *  create people: dell
- *  create time: 2017/09/19 17:11
+ * description:
+ * create people: dell
+ * create time: 2017/09/19 17:11
  */
 
 public class LoginContract {
     interface View extends BaseView {
-        
+        void loginSucceed();
+
+        void loginFaild();
     }
 
-    interface  Presenter extends BasePresenter<View> {
-        
+    interface Presenter extends BasePresenter<View> {
+        void login(String acount, String pwd);
+
     }
 }

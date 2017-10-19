@@ -1,4 +1,4 @@
-package com.example.developlibrary.component;
+package com.example.dell.jianshudemo.mvp.base;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 
-import com.example.developlibrary.interfaces.BaseUiAndMethod;
 import com.example.developlibrary.interfaces.OnClickDefaultBtn;
 import com.example.developlibrary.utils.NetworkUtil;
 import com.example.developlibrary.view.defaultview.DefaultView;
@@ -24,7 +23,7 @@ import io.reactivex.disposables.Disposable;
  * 作者：wl on 2017/9/18 16:19
  * 邮箱：wangl@ixinyongjia.com
  */
-public abstract class BaseFragment extends Fragment implements BaseUiAndMethod, OnClickDefaultBtn {
+public abstract class BaseFragment extends Fragment implements BaseView, OnClickDefaultBtn {
     protected FrameLayout rootView;
     protected View mContentView;
     protected CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -168,7 +167,7 @@ public abstract class BaseFragment extends Fragment implements BaseUiAndMethod, 
     @Override
     public void showDefaultView() {
         if (defaultView != null) {
-            defaultView.hide();
+            defaultView.show();
         }
     }
 

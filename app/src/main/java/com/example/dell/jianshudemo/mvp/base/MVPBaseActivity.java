@@ -2,9 +2,6 @@ package com.example.dell.jianshudemo.mvp.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-
-import com.example.developlibrary.component.BaseActivity;
-
 import java.lang.reflect.ParameterizedType;
 
 

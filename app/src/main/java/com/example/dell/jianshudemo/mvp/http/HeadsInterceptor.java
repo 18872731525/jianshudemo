@@ -22,7 +22,7 @@ public class HeadsInterceptor implements Interceptor {
 
         Request request = chain.request();
         Request.Builder builder = request.newBuilder();
-        builder.header("head_data", "this is test data which add from HeadsInterceptor");
+        builder.header("head_data", "this is demo_fragment data which add from HeadsInterceptor");
         request = builder.build();
 
         Response response = chain.proceed(request);

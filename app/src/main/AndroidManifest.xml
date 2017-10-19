@@ -37,10 +37,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestActivity" />
-        <activity android:name=".mvp.extend.showofficefile.X5WebViewActivity" />
-        <activity android:name=".mvp.extend.showofficefile.FileDisplayActivity" />
-        <activity android:name=".mvp.function.launch.MyFirstKotlinActivity"></activity>
+        <activity
+            android:name=".mvp.extend.showofficefile.X5WebViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.extend.showofficefile.FileDisplayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.function.member.login.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.function.demo.DemoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

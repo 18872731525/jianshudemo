@@ -3,7 +3,7 @@ package com.example.dell.jianshudemo.mvp.extend.showofficefile;
 import android.os.Bundle;
 
 import com.example.dell.jianshudemo.R;
-import com.example.developlibrary.component.BaseActivity;
+import com.example.dell.jianshudemo.mvp.base.BaseActivity;
 import com.tencent.smtt.sdk.WebView;
 
 public class X5WebViewActivity extends BaseActivity {

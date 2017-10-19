@@ -7,10 +7,9 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.example.dell.jianshudemo.R;
+import com.example.dell.jianshudemo.mvp.base.BaseActivity;
 import com.example.dell.jianshudemo.mvp.http.DownLoadUtil;
-import com.example.developlibrary.component.BaseActivity;
 import com.example.developlibrary.utils.BaseFileUtil;
-
 import com.orhanobut.logger.Logger;
 
 import java.io.File;

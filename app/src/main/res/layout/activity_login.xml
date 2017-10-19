@@ -4,5 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/et_acount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp10"
+        android:text="1887273152*" />
+
+    <EditText
+        android:id="@+id/et_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        android:background="@color/white"
+        android:inputType="textPassword"
+        android:padding="@dimen/dp10"
+        android:text="just_one_last_dance" />
+
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@color/orange"
+        android:gravity="center"
+        android:padding="@dimen/dp10"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16" />
 
 </LinearLayout>

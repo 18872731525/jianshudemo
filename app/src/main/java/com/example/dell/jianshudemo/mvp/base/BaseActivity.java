@@ -1,4 +1,4 @@
-package com.example.developlibrary.component;
+package com.example.dell.jianshudemo.mvp.base;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.developlibrary.R;
-import com.example.developlibrary.interfaces.BaseUiAndMethod;
+import com.example.developlibrary.component.BasePermissionsAndStackActivity;
 import com.example.developlibrary.interfaces.OnClickDefaultBtn;
 import com.example.developlibrary.utils.KeyboardHelper;
 import com.example.developlibrary.utils.NetworkUtil;
@@ -31,7 +31,7 @@ import io.reactivex.disposables.Disposable;
  * 作者：wl on 2017/9/18 09:39
  * 邮箱：wangl@ixinyongjia.com
  */
-public class BaseActivity extends BasePermissionsAndStackActivity implements BaseUiAndMethod, OnClickDefaultBtn {
+public class BaseActivity extends BasePermissionsAndStackActivity implements BaseView, OnClickDefaultBtn {
 
     //根容器布局
     private RelativeLayout mContainer;
