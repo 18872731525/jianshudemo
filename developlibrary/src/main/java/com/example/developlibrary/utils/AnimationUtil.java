@@ -6,10 +6,10 @@ package com.example.developlibrary.utils;
  */
 public class AnimationUtil {
     public static long getAnimationDuraing() {
-        if (!PreferUtil.getBoolean(BaseConstant.FIRST_START, false)) {
-            return 200;
+        if (PreferUtil.getBoolean(BaseConstant.FIRST_START, false)) {
+            return 3000;
         } else {
-            return 200;
+            return 3000;
         }
     }
 }
